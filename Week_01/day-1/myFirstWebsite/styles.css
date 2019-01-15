@@ -1,0 +1,98 @@
+body {
+    background-image: url("assets/topography.png");
+    padding: 0 ;
+    margin: 0 0 50px 0;
+}
+
+.header {
+    padding: 0 0;
+    margin: 0;
+    background: #333333;
+}
+
+
+
+h1{
+    padding: 30px 10% 0 10%;
+    margin: 10px 60px 0 60px;
+    font-family: "Vollkorn", serif;
+    font-weight: 750;
+}
+    
+h2 {
+    font-family: "Vollkorn", serif;
+    font-size: 24px;
+    color: #ff0099;
+    padding: 30px 10% 0 10%;
+    margin: 20px 60px 0 60px;
+}
+    
+h3 {
+    font-family: "Vollkorn", serif;
+    font-size: 20px;
+    text-align: center;
+    margin: 35px auto;    
+}
+    
+h4 {
+    font-family: "Vollkorn", serif;
+    font-size: 30px;
+    text-align: center; 
+}
+
+p {
+    font-family: consolas;
+    padding-bottom: 16px;
+    padding: 30px 10% 0 10%;
+    margin: 0 60px 40px 60px;
+}
+    
+.expression {
+    font-family: "Vollkorn", serif;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1px;
+    padding: 30px 10% 0 10%;
+    margin: 20px 60px 0 60px;
+}
+    
+p a {
+    color: black;
+    text-decoration: none;
+}
+
+#a1 {
+    color: #ff0099;
+    position: absolute; right: 490px;
+    margin: 8px 0 0 0;
+    font-family: "Vollkorn", serif;
+    font-size: 16px;
+}
+
+#a2 {
+    color: #ff0099;
+    position: absolute; right: 410px;
+    margin: 8px 0 0 0;
+    font-family: "Vollkorn", serif;
+    font-size: 16px;
+}
+
+#a3 {
+    color: #ff0099;
+    position: absolute; right: 310px;
+    margin: 8px 0 0 0;
+    font-family: "Vollkorn", serif;
+    font-size: 16px;
+}
+
+#a4 {
+    color: #ff0099;
+    position: absolute; right: 200px;
+    margin: 8px 0 0 0;
+    font-family: "Vollkorn", serif;
+    font-size: 16px;
+}
+.header img{
+    margin-top: 3px;
+    margin-left: 185px;
+}
