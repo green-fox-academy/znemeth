@@ -22,8 +22,8 @@ int main(int argc, char* args[]) {
 
     int diag[a][a];
 
-    for(int i=0; i<=a; i++){
-        for(int j=0; j<=a; j++) {
+    for(int i=0; i<a; i++){
+        for(int j=0; j<a; j++) {
             if (i == j) {
                 diag[i][j] = 1;
             } else {
@@ -32,6 +32,14 @@ int main(int argc, char* args[]) {
         }
     }
 
+
+
+    for(int i=0; i<a; i++){
+        for(int j=0; j<a; j++) {
+                std::cout<< diag[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
 
 
     return 0;
