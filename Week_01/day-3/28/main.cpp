@@ -13,19 +13,19 @@ int main(int argc, char* args[]) {
     // The triangle should have as many lines as the number was
 
 
-        int rows;
+    int rows;
 
-        std::cout << "Enter number of rows: " << std::endl;
-        std::cin >> rows;
+    std::cout << "Enter number of rows: " << std::endl;
+    std::cin >> rows;
 
-        for(int i = 1; i <= rows; ++i)
+    for(int i = 1; i <= rows; ++i)
+    {
+        for(int j = 1; j <= i; ++j)
         {
-            for(int j = 1; j <= i; ++j)
-            {
-                std::cout << "* " << std::endl;
-            }
-
-            std::cout<<"\n"<< std::endl;
+            std::cout << "* ";
         }
-        return 0;
+
+        std::cout<<"\n"<< std::endl;
     }
+    return 0;
+}
