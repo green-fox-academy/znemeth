@@ -1,12 +1,13 @@
+// Exercise:
+// draw four different size and color rectangles.
+// avoid code duplication.
+
 #include <iostream>
 #include <SDL.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
-
-//Draws geometry on the canvas
-void draw();
 
 //Starts up SDL and creates window
 bool init();
@@ -20,16 +21,6 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
-void draw()
-{
-    //choose color
-    SDL_SetRenderDrawColor(gRenderer, 0x5b, 0x99, 0x5b, 0xFF);
-//create a rectangle
-    SDL_Rect fillRect = {SCREEN_WIDTH/2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100};
-//draw rectangle
-    SDL_RenderFillRect( gRenderer, &fillRect );
-}
-
 bool init()
 {
     //Initialize SDL
@@ -40,7 +31,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Centered square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Four rectangles", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
@@ -102,7 +93,26 @@ int main( int argc, char* args[] )
         SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
         SDL_RenderClear(gRenderer);
 
-        draw();
+        //--------------------------------------------
+        //This is where you can start drawing geometry
+        //--------------------------------------------
+
+        for (int i=1; i<5;i++) {
+
+            //int v1 = rand() % 255 + 1;
+            //int v2 = rand() % 255 + 1;
+            //int v3= rand() % 255 + 1;
+            //choose color
+
+            //create a rectangle
+            SDL_Rect fillRect = {i*80+70, i*20, i*20, i*20};
+            //draw rectangle
+            //for (int i=0; i<255; i++){
+            SDL_SetRenderDrawColor(gRenderer, i*30+32, i*5, i*200-150, 0xFF);
+            SDL_RenderFillRect(gRenderer, &fillRect);
+
+        }
+
 
         //Update screen
         SDL_RenderPresent(gRenderer);

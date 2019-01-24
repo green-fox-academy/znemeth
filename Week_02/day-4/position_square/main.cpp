@@ -20,14 +20,36 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
+int func(int corx,int cory){
+
+    SDL_Rect fillRect = {corx, cory, 50, 50};
+    //draw rectangle
+    //for (int i=0; i<255; i++){
+    SDL_SetRenderDrawColor(gRenderer, 130, 125, 20, 0xFF);
+    SDL_RenderFillRect(gRenderer, &fillRect);
+
+    //SDL_SetRenderDrawColor(gRenderer, 0xff, 0xa5, 0x4c, 0xFF);
+    //SDL_RenderDrawLine(gRenderer, corx, cory, SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+}
+
 void draw()
 {
-    //choose color
-    SDL_SetRenderDrawColor(gRenderer, 0x5b, 0x99, 0x5b, 0xFF);
-//create a rectangle
-    SDL_Rect fillRect = {SCREEN_WIDTH/2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100};
-//draw rectangle
-    SDL_RenderFillRect( gRenderer, &fillRect );
+    // create a square drawing function that takes 2 parameters:
+    // the x and y coordinates of the square's top left corner
+    // and draws a 50x50 square from that point.
+    // draw at least 3 squares with that function.
+    // avoid code duplication.
+
+    int x=50;
+    int y=50;
+
+    for (int i=1; i<4 ;i++){
+        int corx = x*i+50;
+        int cory = y*i+90;
+
+        func(corx, cory);
+    }
+
 }
 
 bool init()
@@ -40,7 +62,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Centered square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Position square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
