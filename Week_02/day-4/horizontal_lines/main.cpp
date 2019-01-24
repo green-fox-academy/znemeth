@@ -20,17 +20,29 @@ SDL_Window* gWindow = nullptr;
 //The window renderer
 SDL_Renderer* gRenderer = nullptr;
 
+
+int func(int corx,int cory){
+
+    SDL_SetRenderDrawColor(gRenderer, 0xff, 0xa5, 0x4c, 0xFF);
+    SDL_RenderDrawLine(gRenderer, corx, cory, corx+50, cory);
+
+}
 void draw()
 {
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
-    SDL_SetRenderDrawColor(gRenderer, 0x00, 0xff, 0x7f, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0, 0,
-                                  SCREEN_WIDTH, SCREEN_HEIGHT);
+    // Create a line drawing function that takes 2 parameters:
+    // The x and y coordinates of the line's starting point
+    // and draws a 50 long horizontal line from that point.
+    // Draw at least 3 lines with that function. Use loop for that.
+    int x=11;
+    int y=16;
 
-    SDL_SetRenderDrawColor(gRenderer, 0xff, 0x66, 0x66, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0, SCREEN_HEIGHT,
-                                  SCREEN_WIDTH, 0);
+    for (int i=0; i<10 ;i++){
+        int corx = x*i+10;
+        int cory = y*i-2;
+
+        func(corx, cory);
+    }
+
 }
 
 bool init()
@@ -43,7 +55,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Diagonals", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Horizontal lines", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;

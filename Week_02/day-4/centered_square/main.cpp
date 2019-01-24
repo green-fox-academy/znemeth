@@ -22,15 +22,7 @@ SDL_Renderer* gRenderer = nullptr;
 
 void draw()
 {
-    // Draw the canvas' diagonals.
-    // If it starts from the upper-left corner it should be green, otherwise it should be red.
-    SDL_SetRenderDrawColor(gRenderer, 0x00, 0xff, 0x7f, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0, 0,
-                                  SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    SDL_SetRenderDrawColor(gRenderer, 0xff, 0x66, 0x66, 0xFF);
-    SDL_RenderDrawLine(gRenderer, 0, SCREEN_HEIGHT,
-                                  SCREEN_WIDTH, 0);
+    // Draw a green 100x100 square to the canvas' center.
 }
 
 bool init()
@@ -43,7 +35,7 @@ bool init()
     }
 
     //Create window
-    gWindow = SDL_CreateWindow( "Diagonals", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
+    gWindow = SDL_CreateWindow( "Centered square", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
     if( gWindow == nullptr )
     {
         std::cout << "Window could not be created! SDL Error: " << SDL_GetError() << std::endl;
