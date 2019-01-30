@@ -8,6 +8,7 @@ public:
     Thing(const std::string& name);
 
     void complete();
+
     std::string toString();
 
 private:
