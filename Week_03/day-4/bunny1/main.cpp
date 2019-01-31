@@ -7,12 +7,12 @@ int adder (int x) {
     if (x < 1) {
         return 0;
     } else {
-        return 2 + adder(x-1);
+        return 2 + adder(x - 1);
     }
 }
 
 int main() {
-      int bunny = 1;
+      int bunny = 2;
       adder(bunny);
       std::cout << "Number: " << adder(bunny) << std::endl;
       return 0;
