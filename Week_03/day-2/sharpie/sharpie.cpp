@@ -10,7 +10,18 @@ Sharpie::Sharpie(std::string colorIN, float widthIN) {
     inkAmount = 100;
 }
 
-    void Sharpie::use()
-    {
-        inkAmount--;
-    }
+void Sharpie::use() {
+    inkAmount--;
+}
+
+std::string Sharpie::getColor(){
+    return color;
+};
+
+float Sharpie::getWidth(){
+    return width;
+};
+
+float Sharpie::getInkAmount(){
+    return inkAmount;
+};

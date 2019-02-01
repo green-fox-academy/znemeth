@@ -23,9 +23,10 @@ public:
 int main()
 {
     PostIt ob1 ("orange", "Idea 1", "blue");
+    PostIt ob2 ("blue", "Idea 2", "red");
 
     std::cout<< ob1.toString() << std::endl;
-
+    std::cout<< ob2.toString() << std::endl;
 
 /*Create a PostIt class that has
 a backgroundColor

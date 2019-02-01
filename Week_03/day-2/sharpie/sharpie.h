@@ -9,13 +9,15 @@
 class Sharpie {
 public:
     Sharpie (std::string colorIN, float widthIN);
+    void use ();
+    std::string getColor();
+    float getWidth();
+    float getInkAmount();
 
+private:
     std::string color;
     float width;
     float inkAmount;
-
-    void use ();
-
 };
 
 

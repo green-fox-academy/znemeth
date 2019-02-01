@@ -4,8 +4,12 @@
 int main()
 {
     Animal cat;
+    Animal dog (9, 10);
+
 
     int thirst_number, hunger_number;
+    int thi, hun;
+
 
     std::cout << "Number of drinking: " << std::endl;
     std::cin >> thirst_number;

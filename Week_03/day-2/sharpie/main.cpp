@@ -13,7 +13,7 @@ int main() {
         ob.use();
     }
 
-    std::cout << "Sharpie properties: " << ob.color << ob.width << ob.inkAmount << std::endl;
+    std::cout << "Sharpie properties: " << ob.getColor() << ", " << ob.getWidth()<< ", " << ob.getInkAmount() << std::endl;
 
     return 0;
 }

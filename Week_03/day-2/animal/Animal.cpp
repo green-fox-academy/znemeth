@@ -11,6 +11,11 @@ Animal::Animal(){
     thirst = 50;
 }
 
+Animal::Animal(int hun, int thi) {
+    hunger = hun;
+    thirst = thi;
+}
+
 void Animal::eat(){
     hunger--;
 };
