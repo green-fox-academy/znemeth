@@ -13,12 +13,12 @@ Student::Student() {
     _skippedDays = 0;
 };
 
-Student::Student(std::string name, int age, std::string gender, std::string previousOrganization, int skippedDays) {
+Student::Student(std::string name, int age, std::string gender, std::string previousOrganization) {
     _name = name;
     _age = age;
     _gender = gender;
     _previousOrganization = previousOrganization;
-    _skippedDays = skippedDays;
+    _skippedDays = 0;
 };
 
 void Student::introduce() {
@@ -30,6 +30,6 @@ void Student::getGoal() {
     std::cout << "My goal is: Live for the moment!" << std::endl;
 };
 
-void skippedDays(int skippedDays, int numberOfDays) {
-    skippedDays += numberOfDays;
+void Student::skipDays(int numberOfDays) {
+    _skippedDays += numberOfDays;
 };

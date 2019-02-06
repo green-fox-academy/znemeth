@@ -6,8 +6,19 @@
 #define GFA_MENTOR_H
 
 
-class mentor {
+#include "person.h"
 
+class Mentor : public Person {
+    public:
+        Mentor();
+        Mentor(std::string name, int age, std::string gender, std::string level);
+
+        void getGoal() override;
+        void introduce() override;
+
+    protected:
+
+        std::string _level;
 };
 
 

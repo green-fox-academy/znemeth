@@ -4,10 +4,22 @@
 
 #ifndef GFA_COHORT_H
 #define GFA_COHORT_H
+#include <string>
+#include <vector>
+#include "mentor.h"
+#include "student.h"
 
 
-class cohort {
-
+class Cohort {
+public:
+    Cohort(std::string name);
+    void info();
+    void addStudent(Student*);
+    void addMentor(Mentor*);
+private:
+    std::string _name;
+    std::vector<Student*> _students;
+    std::vector<Mentor*> _mentors;
 };
 
 
