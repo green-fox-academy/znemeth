@@ -1,0 +1,16 @@
+//
+// Created by NEMETH on 2019.02.06..
+//
+
+#ifndef INSTRUMENTS_STRINGEDINSTRUMENT_H
+#define INSTRUMENTS_STRINGEDINSTRUMENT_H
+
+
+
+class StringedInstrument {
+
+};
+
+
+
+#endif //INSTRUMENTS_STRINGEDINSTRUMENT_H
