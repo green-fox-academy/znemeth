@@ -26,9 +26,12 @@ private:
     int negyedik;
 
 public:
-    int subtract (Sum &summing){
-        //int harmadik;
-        negyedik = harmadik * 100;
+    int subtract (Sum summing){
+
+        //Sum summing - érték
+        //Sum &summing - referencia biztonságosabb pointer
+
+        negyedik = summing.summing() * 100;
         return negyedik;
 
     }
@@ -44,8 +47,9 @@ int main() {
     std::cout << "2. number: " << std::endl;
     std::cin >> y;
 
-    Subt ob1;
-    std::cout << "Result: " << ob1.subtract() << std::endl;
+    Subt ob2;
+    Sum ob1 (x, y);
+    std::cout << "Result: " << ob2.subtract(ob1) << std::endl;
 
     return 0;
 }

@@ -12,10 +12,11 @@ class StringedInstrument : public Instrument {
 
 public:
     virtual std::string sound() = 0;
+
     void play();
 
 protected:
-    int numberOfStrings;
+    int _numberOfStrings;
 };
 
 

@@ -7,7 +7,7 @@
 #include <string>
 #include <iostream>
 
-void StringedInstrument::play(){
-    std::cout<< _name <<", a "<< numberOfStrings << "-stringed instrument that goes"<< sound() << std::endl;
+void StringedInstrument::play() {
+    std::cout << _name << ", a " << _numberOfStrings << "-stringed instrument that goes " << sound() << std::endl;
 
 }
