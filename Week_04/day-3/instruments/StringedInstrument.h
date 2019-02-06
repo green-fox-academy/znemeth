@@ -5,12 +5,18 @@
 #ifndef INSTRUMENTS_STRINGEDINSTRUMENT_H
 #define INSTRUMENTS_STRINGEDINSTRUMENT_H
 
+#include <string>
+#include "instrument.h"
 
+class StringedInstrument : public Instrument {
 
-class StringedInstrument {
+public:
+    virtual std::string sound() = 0;
+    void play();
 
+protected:
+    int numberOfStrings;
 };
-
 
 
 #endif //INSTRUMENTS_STRINGEDINSTRUMENT_H
