@@ -10,7 +10,7 @@
 Bird::Bird()
 {
     _name = "Sparrow";
-    _age = 5;
+    _age = 6;
 }
 
 void Bird::fly()
@@ -26,4 +26,14 @@ void Bird::land()
 void Bird::takeOff()
 {
     std::cout << "BiRD TAKEOFF TAKEOFF TAKEOFF!!!" << std::endl;
+}
+
+std::string Bird::breed()
+{
+    return "asd";
+}
+
+std::string Bird::getName()
+{
+    return _name;
 }
