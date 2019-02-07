@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Helicopter.h"
 
+Helicopter::Helicopter(int speed, int elevation, int size) : Vehicle(speed, elevation, size){}
+
 void Helicopter::fly()
 {
     std::cout << "FLY FLY FLY!!!" << std::endl;
@@ -17,5 +19,5 @@ void Helicopter::land()
 
 void Helicopter::takeOff()
 {
-    std::cout << "TAKEOFF TAKEOFF TAKEOFF" << std::endl;
+    std::cout << "TAKEOFF TAKEOFF TAKEOFF!!!" << std::endl;
 }

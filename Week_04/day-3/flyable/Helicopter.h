@@ -11,11 +11,13 @@
 class Helicopter : public Flyable, public Vehicle
 {
 public:
-    void land();
+    Helicopter(int speed, int elevation, int size);
 
-    void fly();
+    void land() override;
 
-    void takeOff();
+    void fly() override;
+
+    void takeOff() override;
 };
 
 #endif //FLYABLE_HELICOPTER_H

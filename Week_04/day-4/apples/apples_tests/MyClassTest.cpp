@@ -5,7 +5,7 @@
 #include <gtest/gtest.h>
 #include "MyClass.h"
 
-TEST(MyClass, Teszteles)
+TEST(MyClassAkarmi, Teszteles)
 {
     ASSERT_EQ (getApple(), "apple");
 }
