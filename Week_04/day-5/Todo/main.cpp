@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         if (firstarg == "-l") {
 
             std::ifstream myfile;
-            myfile.open("todo.txt");
+            myfile.open("todo_empty.txt");
 
             std::string line;
 
@@ -33,7 +33,16 @@ int main(int argc, char *argv[])
             }
             myfile.close();
 
-            //std::cout<< numberOfLines <<std::endl;
+            if (numberOfLines == 0) {
+                std::cout << "No todos for today! :)" << std::endl;
+            }
+        }
+    } else if (argc == 3) {
+
+        std::string secondarg(argv[2]);
+        std::string thirdarg(argv[3]);
+        if (secondarg == "-a") {
+
         }
 
         return 0;
