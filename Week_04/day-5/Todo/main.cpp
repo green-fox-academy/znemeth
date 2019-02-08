@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+//#include std::is_empty
 
 int main(int argc, char *argv[])
 {
@@ -25,10 +26,14 @@ int main(int argc, char *argv[])
 
             std::string line;
 
+            int numberOfLines = 0;
             while (getline(myfile, line)) {
-                std::cout << line << '\n';
+                numberOfLines = numberOfLines + 1;
+                std::cout << numberOfLines << " - " << line << '\n';
             }
             myfile.close();
+
+            //std::cout<< numberOfLines <<std::endl;
         }
 
         return 0;
