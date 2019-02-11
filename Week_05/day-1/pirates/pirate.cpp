@@ -4,7 +4,6 @@
 
 #include <string>
 #include "pirate.h"
-#include "ship.h"
 
 Pirate::Pirate(std::string name, bool isCaptain, bool hasWoodenleg)
 {
@@ -42,4 +41,24 @@ std::string Pirate::toString()
     } else {
         return "Hello, I'm " + _name + ". " + "I still have my real legs and " + std::to_string(_gold) + " golds.";
     }
+}
+
+bool Pirate::isCaptain()
+{
+    return _isCaptain;
+}
+
+bool Pirate::hasWoodenleg()
+{
+    return _hasWoodenleg;
+}
+
+int Pirate::getGold()
+{
+    _gold;
+}
+
+std::string Pirate::getName()
+{
+    return _name;
 }

@@ -4,6 +4,7 @@
 
 int main()
 {
+    Pirate pirate1("Jack", true, true);
 
     return 0;
 }

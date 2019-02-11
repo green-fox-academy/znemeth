@@ -5,13 +5,20 @@
 #ifndef PIRATES_PIRATE_H
 #define PIRATES_PIRATE_H
 
+#include <string>
+
 class Pirate
 {
 public:
     Pirate(std::string name, bool isCaptain, bool hasWoodenleg);
+
     void work();
     void party();
     std::string toString();
+    bool isCaptain();
+    bool hasWoodenleg();
+    int getGold();
+    std::string getName();
 
 private:
     std::string _name;
