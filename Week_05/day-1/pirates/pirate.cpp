@@ -55,7 +55,7 @@ bool Pirate::hasWoodenleg()
 
 int Pirate::getGold()
 {
-    _gold;
+    return _gold;
 }
 
 std::string Pirate::getName()
