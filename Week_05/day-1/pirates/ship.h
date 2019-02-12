@@ -12,9 +12,13 @@ class Ship
 {
 public:
     void addPirate(Pirate pirate);
+
     std::vector<std::string> getPoorPirates();
+
     void lastDayOnTheShip();
+
     void prepareForBattle();
+
     int getGolds();
 
 private:
