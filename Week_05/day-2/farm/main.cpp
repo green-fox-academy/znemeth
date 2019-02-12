@@ -1,19 +1,30 @@
 #include <iostream>
 #include "Animal.h"
+#include "Farm.h"
 
 int main()
 {
+    Farm farm(4);
 
-    Animal cat;
-    cat.eat();
+    farm.breed();
+    farm.breed();
+    farm.breed();
+    farm.breed();
+    farm.breed();
+    
+    std::cout << farm.sizeOfAnimalVector();
 
-    for (int i = 0; i < 7; ++i) {
-        cat.drink();
-    }
+    /*  Animal cat;
+      cat.eat();
 
-    //cat.play();
+      for (int i = 0; i < 1; ++i) {
+          cat.drink();
+      }
 
-    std::cout << "Hunger: "<< cat.hunger << std::endl;
-    std::cout << "Thirst: "<< cat.thirst << std::endl;
+      cat.play();
+
+      std::cout << "Hunger: " << cat.hunger << std::endl;
+      std::cout << "Thirst: " << cat.thirst << std::endl;
+      */
     return 0;
 }
