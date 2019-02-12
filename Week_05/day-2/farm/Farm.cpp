@@ -29,8 +29,8 @@ void Farm::slaughter()
         if (_animals[i].getHunger() < temp) {
             temp = _animals[i].getHunger();
         }
-
     }
+
     for (int j = 0; j < _animals.size(); ++j) {
         if (_animals[j].getHunger() == temp) {
             _animals.erase(_animals.begin() + j);
