@@ -9,13 +9,13 @@ class Animal
 {
 public:
     Animal();
-
     Animal(int hun, int thi);
     void eat();
     void drink();
     void play();
+    int getHunger() const;
 
-//private:
+private:
     int hunger;
     int thirst;
 };

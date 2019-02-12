@@ -31,4 +31,9 @@ void Animal::play()
 {
     hunger++;
     thirst++;
+}
+
+int Animal::getHunger() const
+{
+    return hunger;
 };
