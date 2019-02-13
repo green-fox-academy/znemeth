@@ -26,6 +26,11 @@ public:
     int get_ammoStore() const;
     int fight();
     int refill(int fillingAmmo);
+    std::string getType();
+    std::string getStatus();
+    bool isPriority();
+    std::string boolToString();
+
 
 protected:
     AircraftType _aircraftType;

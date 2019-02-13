@@ -3,6 +3,7 @@
 //
 
 #include "Aircraft.h"
+#include "string"
 
 std::string aircraftToString(AircraftType aircraftType)
 {
@@ -69,4 +70,33 @@ int Aircraft::refill(int fillingAmmo)
         remainingAmmo = 0; //fillingAmmo - _ammoStore;
     }
     return remainingAmmo;
+}
+
+std::string Aircraft::getType()
+{
+    return aircraftToString(get_aircraftType());
+}
+
+std::string Aircraft::getStatus()
+{
+    return "Type: " + getType() +
+           ", Ammo: " + std::to_string(_ammoStore) +
+           ", Base Damage: " + std::to_string(_baseDamage) +
+           ", All Damage: " + std::to_string(_ammoStore * _baseDamage);
+}
+
+bool Aircraft::isPriority()
+{
+    if (_aircraftType == F35) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+std::string Aircraft::boolToString(){
+    if (isPriority() == 0){
+        return "TRUE";
+    } else
+        return "FALSE";
 }
