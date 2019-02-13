@@ -13,6 +13,11 @@ class Carrier
 {
 public:
     Carrier(int initAmmo, int HP);
+    void add(Aircraft aircraft);
+    const std::vector<Aircraft> &get_aircrafts() const;
+    int get_initAmmo() const;
+    int get_HP() const;
+    void fill();
 
 private:
     std::vector<Aircraft> _aircrafts;

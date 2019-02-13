@@ -23,5 +23,10 @@ int main()
     std::cout << wizz.boolToString() << std::endl;
     std::cout << ryan.boolToString() << std::endl;
 
+    Carrier Maincarrier(1000, 100);
+    Maincarrier.add(wizz);
+    Maincarrier.add(ryan);
+    std::cout << "Number of aircrafts on the carrier: " << Maincarrier.get_aircrafts().size();
+
     return 0;
 }
