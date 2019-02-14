@@ -1,25 +1,22 @@
-#include <iostream>
+#include <string>
 #include <fstream>
+#include <iostream>
 #include <sstream>
-#include <cstring>
 
 int main()
 {
-    std::ifstream fin("../usage.txt");
-    int count = 0;
-    char ch[20], c[20];
+    std::ifstream fileName("../usage.txt");
+    std::string word = "mentor";
+    std::string str;
+    getline(fileName, str);
+    getline(fileName, word, );
 
-    std::cout << "Enter a word to count:";
-    gets(c);
-
-    while (fin) {
-        fin >> ch;
-        if (strcmp(ch, c) == 0)
-            count++;
+    std::stringstream ss(str);
+    int cnt = 0;
+    while (ss >> str) {
+        if (str == word)
+            cnt++;
     }
-
-    std::cout << "Occurrence=" << count << "\n";
-    fin.close();
-
+    std::cout << cnt << "\n";
     return 0;
 }
