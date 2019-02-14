@@ -15,3 +15,8 @@ Waiter::Waiter(std::string name, int experience) : Employee(name, experience)
 
 }
 
+int Waiter::get_tips() const
+{
+    return _tips;
+}
+

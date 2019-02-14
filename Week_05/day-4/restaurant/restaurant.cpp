@@ -22,3 +22,13 @@ void Restaurant::hire(Employee &employee)
 {
     _employees.push_back(&employee);
 }
+
+const std::string &Restaurant::get_name() const
+{
+    return _name;
+}
+
+int Restaurant::get_founded() const
+{
+    return _founded;
+}

@@ -16,6 +16,12 @@ public:
 
 protected:
     std::string _name;
+public:
+    const std::string &get_name() const;
+
+    int get_experience() const;
+
+protected:
     int _experience = 0;
 };
 

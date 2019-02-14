@@ -15,6 +15,8 @@ public:
 
 protected:
     int _tips = 0;
+public:
+    int get_tips() const;
 };
 
 #endif //RESTAURANT_WAITER_H

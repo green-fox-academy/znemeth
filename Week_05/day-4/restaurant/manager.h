@@ -16,6 +16,8 @@ public:
 
 protected:
     int _moodLevel = 400;
+public:
+    int get_moodLevel() const;
 };
 
 #endif //RESTAURANT_MANAGER_H

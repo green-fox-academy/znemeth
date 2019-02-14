@@ -18,6 +18,12 @@ public:
 
 protected:
     std::string _name;
+public:
+    const std::string &get_name() const;
+
+    int get_founded() const;
+
+protected:
     int _founded;
     std::vector<Employee*> _employees;
 

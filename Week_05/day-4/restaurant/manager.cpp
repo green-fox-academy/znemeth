@@ -19,3 +19,8 @@ Manager::Manager(std::string name, int experience) : Employee(name, experience)
 {
 
 }
+
+int Manager::get_moodLevel() const
+{
+    return _moodLevel;
+}
