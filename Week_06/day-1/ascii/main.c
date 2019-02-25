@@ -8,7 +8,7 @@ int main()
 
     for (int i = 0; i < 9; i++) {
 
-        printf("%c",array[i]);
+        printf("%c", array[i]);
     }
     return 0;
 }
