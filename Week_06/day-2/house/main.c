@@ -32,12 +32,14 @@ house_t create_house(char *_address, int _price, int _rooms, int _area)
     return house;
 }
 
-void pricing(house_t *house)
+int pricing(house_t *house)
 {
     if ((house->price / house->area) > 400) {
-        printf("%s", "Do not buy it, it is way more expensive than the neighborhood!\n");
+        // printf("%s", "Do not buy it, it is way more expensive than the neighborhood!\n");
+        return 0;
     } else {
-        printf("%s", "Buy it! It is cheap!!!\n");
+        // printf("%s", "Buy it! It is cheap!!!\n");
+        return 1;
     }
 }
 
@@ -67,7 +69,7 @@ int main()
     array_of_houses[3] = house4;
     array_of_houses[4] = house5;
 
-    int length = sizeof(array_of_houses) / sizeof(array_of_houses[0]);
+    int length = sizeof(array_of_houses) / sizeof(*array_of_houses);
     printf("Number of houses: %d \n", length);
 
     pricing(&house1);
@@ -76,7 +78,7 @@ int main()
     pricing(&house4);
     pricing(&house5);
 
-    printf("That many houses worth to buy: %d\n", worth_to_buy(array_of_houses, length));
+    printf("Number of houses that worth to buy: %d\n", worth_to_buy(array_of_houses, length));
 
     return 0;
 }
