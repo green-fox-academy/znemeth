@@ -41,9 +41,15 @@ void pricing(house_t *house)
     }
 }
 
-house_t worth_to_buy(house_t array[])
+int worth_to_buy(house_t array[], int length)
 {
-
+    int count = 0;
+    for (int i = 0; i < length; i++) {
+        if (pricing(&array[i])) {
+            count++;
+        }
+    }
+    return count;
 }
 
 int main()
@@ -61,7 +67,7 @@ int main()
     array_of_houses[3] = house4;
     array_of_houses[4] = house5;
 
-    int length = sizeof(array_of_houses)/ sizeof(array_of_houses[0]);
+    int length = sizeof(array_of_houses) / sizeof(array_of_houses[0]);
     printf("Number of houses: %d \n", length);
 
     pricing(&house1);
@@ -69,6 +75,8 @@ int main()
     pricing(&house3);
     pricing(&house4);
     pricing(&house5);
+
+    printf("That many houses worth to buy: %d\n", worth_to_buy(array_of_houses, length));
 
     return 0;
 }
