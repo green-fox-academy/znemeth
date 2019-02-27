@@ -56,6 +56,8 @@ int main()
         printf("%d ", pointer3[i]);
     }
 
+
+    
     free(pointer1);
     free(pointer2);
     free(pointer3);
