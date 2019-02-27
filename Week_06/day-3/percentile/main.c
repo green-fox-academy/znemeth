@@ -1,24 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 //Read the size of a matrix(don't have to be squared matrix) from the console.
 //Allocate memory dynamically for the elements of the matrix, then read the elements.
 //Create a function which can calculate the n-th percentile of the elements.
 //Calculate the 80-th and the 90-th percentile.
-
-int calculate_percentile(int **matrix, int percentile)
-{
-
-    int percen = percentile / 10;
-
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
-    //return ;
-}
 
 int main()
 {
@@ -40,13 +27,19 @@ int main()
         }
     }
 
-
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
 
     int percentile;
     printf("Gimme percentiles: \n");
     scanf("%d", &percentile);
 
-    calculate_percentile(**matrix, percentile);
+    int percent80 = round(m*((float)percentile/100));
+    printf("The 80 percentile is: %d", percent80);
 
     return 0;
 }
