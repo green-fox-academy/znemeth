@@ -77,7 +77,7 @@ int main()
     printf("\n");
 
     qsort(pointer3, 20, sizeof(int), cmpfunc);
-    
+
     reverseArray(pointer3, 0, 19);
     printArray(pointer3, 20);
 
