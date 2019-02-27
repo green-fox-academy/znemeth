@@ -26,7 +26,7 @@ int main()
      old memory block may or may not be freed), or some non-null pointer may be returned that may not be used to
      access storage)."
      */
-    
+
     for (int i = 0; i < 10; i++) {
         printf("%d \n", pointer[i]);
     }
