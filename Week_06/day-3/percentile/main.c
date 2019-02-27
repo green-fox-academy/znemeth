@@ -6,6 +6,20 @@
 //Create a function which can calculate the n-th percentile of the elements.
 //Calculate the 80-th and the 90-th percentile.
 
+int calculate_percentile(int **matrix, int percentile)
+{
+
+    int percen = percentile / 10;
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    //return ;
+}
+
 int main()
 {
     int m;
@@ -17,7 +31,7 @@ int main()
     int **matrix = (int **) malloc(m * sizeof(int *));
 
     for (int i = 0; i < m; i++) {
-        matrix[i] = (int *) malloc(m * sizeof(int));
+        matrix[i] = (int *) malloc(n * sizeof(int));
     }
 
     for (int i = 0; i < m; i++) {
@@ -26,12 +40,13 @@ int main()
         }
     }
 
-    for (int i = 0; i < m; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", matrix[i][j]);
-        }
-        printf("\n");
-    }
+
+
+    int percentile;
+    printf("Gimme percentiles: \n");
+    scanf("%d", &percentile);
+
+    calculate_percentile(**matrix, percentile);
 
     return 0;
 }
