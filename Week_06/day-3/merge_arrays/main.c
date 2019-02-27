@@ -70,18 +70,14 @@ int main()
         }
     }
 
+    printf("Merged array: \n");
     for (int i = 0; i < 20; i++) {
         printf("%d ", pointer3[i]);
     }
     printf("\n");
 
     qsort(pointer3, 20, sizeof(int), cmpfunc);
-
-    for (int i = 0; i < 20; i++) {
-        printf("%d ", pointer3[i]);
-    }
-    printf("\n");
-
+    
     reverseArray(pointer3, 0, 19);
     printArray(pointer3, 20);
 
