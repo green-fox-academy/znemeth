@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "time.h"
 
 // The rich uncle has just died and you need to distribute his heritage among the relatives. The money you have to distribute is $1024
 // Generate a random number between 20 and 50. This number will be the amount of relatives that showed up at the inheritance party.
@@ -13,7 +14,7 @@
 int main()
 {
     int money = 1024;
-
+    srand(time(NULL)); // not to start with always the same number of relatives
     unsigned int number_relatives = (unsigned int) rand() % 30 + 20;
 
     printf("Number of relatives: %d \n", number_relatives);
@@ -27,7 +28,7 @@ int main()
     }
 
     for (int i = 0; i < number_relatives; i++) {
-        printf("%d, ", relatives[i]);
+        printf("%d ", relatives[i]);
     }
 
     int sum = 0;
@@ -35,7 +36,7 @@ int main()
         sum += relatives[i];
     }
 
-    printf("\nTotal money: %d ", sum);
+    printf("\nTotal money: %d ", sum + 1); //it is necessary due to the conflict of dividing an int below 1.00.
 
     free(relatives);
     return 0;

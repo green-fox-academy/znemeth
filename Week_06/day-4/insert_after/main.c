@@ -15,6 +15,20 @@ node_t *create()
     return list;
 }
 
+node_t *insert_at(node_t *list, int data)
+{
+    node_t *given_node = (node_t *) malloc(sizeof(node_t));
+    given_node->data = data;
+
+    node_t *p = list->next->next->next;
+
+    list->next->next->next = given_node;
+
+    given_node->next = p;
+
+    return list;
+}
+
 void list_pushback(node_t *list, int data)
 {
     //allocate
@@ -44,7 +58,7 @@ void list_print(node_t *list)
 void list_dealloc(node_t *list)
 {
     node_t *node_free = list;
-    while(node_free != NULL) {
+    while (node_free != NULL) {
         node_t *next_node = node_free->next;
         free(node_free);
         node_free = next_node;
@@ -60,6 +74,8 @@ int main()
     list_pushback(list, 100);
     list_pushback(list, 200);
     list_pushback(list, 1000);
+
+    list = insert_at(list, 9876543);
 
     list_print(list);
 
