@@ -91,7 +91,7 @@ int main()
 
     size(list);
 
-    printf("Is the list empty: %d\n", list_empty);
+    printf("Is the list empty: %d\n", list_empty(list));
 
     list_dealloc(list);
     return 0;
