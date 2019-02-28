@@ -51,13 +51,24 @@ void list_dealloc(node_t *list)
     }
 }
 
+node_t *delete_first(node_t *list)
+{
+    node_t *deleting;
+    deleting = list;
+    list = list->next;
+    free(deleting);
+    return list;
+}
+
 int main()
 {
     node_t *list = create();
 
     list_pushback(list, 10);
     list_pushback(list, 20);
-    list_pushback(list, 100);;
+    list_pushback(list, 100);
+
+    list = delete_first(list);
 
     list_print(list);
 
