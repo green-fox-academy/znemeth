@@ -13,23 +13,21 @@
 int main()
 {
     int money = 1024;
-    int lower = 20;
-    int upper = 50;
 
-    int number_relatives = lower + (rand() % (upper - lower + 1));
+    unsigned int number_relatives = (unsigned int) rand() % 30 + 20;
 
     printf("Number of relatives: %d \n", number_relatives);
 
     int *relatives = (int *) calloc(number_relatives, sizeof(int *));
 
     while (money != 0) {
-        int order_lucky_relatives = (rand() % (number_relatives));
+        int order_lucky_relatives = rand() % (number_relatives);
         relatives[order_lucky_relatives] += money / 2;
         money /= 2;
     }
 
     for (int i = 0; i < number_relatives; i++) {
-        printf("%d ", relatives[i]);
+        printf("%d, ", relatives[i]);
     }
 
     int sum = 0;
