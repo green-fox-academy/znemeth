@@ -67,6 +67,7 @@ int main()
     list_pushback(list, 10);
     list_pushback(list, 20);
     list_pushback(list, 100);
+    list_pushback(list, 200);
 
     list = delete_first(list);
 
