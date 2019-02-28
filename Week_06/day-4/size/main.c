@@ -15,8 +15,21 @@ node_t *create()
     return list;
 }
 
-node_t *size()
+void size(node_t *list)
 {
+    node_t *it = list;
+    int count = 0;
+
+    if (it->next == NULL) {
+        count = 1;
+        printf("Number of nodes: 1");
+    };
+
+    while (it->next != NULL) {
+        it = it->next;
+        count++;
+    }
+    printf("Number of nodes: %d\n", count + 1);
 }
 
 void list_pushback(node_t *list, int data)
@@ -48,7 +61,7 @@ void list_print(node_t *list)
 void list_dealloc(node_t *list)
 {
     node_t *node_free = list;
-    while(node_free != NULL) {
+    while (node_free != NULL) {
         node_t *next_node = node_free->next;
         free(node_free);
         node_free = next_node;
@@ -66,6 +79,8 @@ int main()
     list_pushback(list, 1000);
 
     list_print(list);
+
+    size(list);
 
     list_dealloc(list);
     return 0;
