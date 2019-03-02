@@ -6,6 +6,17 @@
 // Find the group where the median is the lowest.
 // Note that the groups do not necessarily contain the same amount of people
 
+int min_of_four(int a, int b, int c, int d)
+{
+    if (a < b && a < c && a < d) {
+        return a;
+    } else if (b < a && b < c && b < d) {
+        return b;
+    } else if (c < a && c < b && c < d) {
+        return c;
+    } else return d;
+}
+
 void swap(int *p, int *q)
 {
     int t;
@@ -159,22 +170,24 @@ int main()
     int n = 14;
     sort(sortarray1, n);
     n = (n + 1) / 2 - 1;
-    printf("Median = %d ", sortarray1[n]);
+    printf("Median in Group A: %d \n", sortarray1[n]);
 
     int p = 12;
     sort(sortarray2, p);
     p = (p + 1) / 2 - 1;
-    printf("Median = %d ", sortarray2[p]);
+    printf("Median in Group B: %d \n", sortarray2[p]);
 
     int q = 15;
     sort(sortarray3, q);
     q = (q + 1) / 2 - 1;
-    printf("Median = %d ", sortarray3[q]);
+    printf("Median in Group C: %d \n", sortarray3[q]);
 
     int r = 15;
     sort(sortarray4, r);
     r = (r + 1) / 2 - 1;
-    printf("Median = %d ", sortarray4[r]);
+    printf("Median in Group D: %d \n", sortarray4[r]);
+
+    printf("The median is %d cm in Group D.", min_of_four(sortarray1[n], sortarray2[p], sortarray3[q], sortarray4[r]));
 
     return 0;
 }
