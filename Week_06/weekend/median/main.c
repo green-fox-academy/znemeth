@@ -6,9 +6,26 @@
 // Find the group where the median is the lowest.
 // Note that the groups do not necessarily contain the same amount of people
 
-int cmpfunc(const void *a, const void *b)
+void swap(int *p, int *q)
 {
-    return (*(int *) a - *(int *) b);
+    int t;
+
+    t = *p;
+    *p = *q;
+    *q = t;
+}
+
+void sort(int a[], int n)
+{
+    int i;
+    int j;
+
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (a[j] > a[j + 1])
+                swap(&a[j], &a[j + 1]);
+        }
+    }
 }
 
 int main()
@@ -44,9 +61,11 @@ int main()
     int sum1 = 0;
     int count1 = 0;
     int piece1[14];
+    int sortarray1[14];
     for (i = 1; i < 15; ++i) {
         piece1[i] = atoi(array1[i]);
         sum1 += piece1[i];
+        sortarray1[i - 1] = piece1[i];
         count1++;
     }
     printf("%s%d, %s%d \n", "Group A: count: ", count1, "sum: ", sum1);
@@ -68,9 +87,11 @@ int main()
     int sum2 = 0;
     int count2 = 0;
     int piece2[12];
+    int sortarray2[12];
     for (j = 1; j < 13; ++j) {
         piece2[j] = atoi(array2[j]);
         sum2 += piece2[j];
+        sortarray2[j - 1] = piece2[j];
         count2++;
     }
     printf("%s%d, %s%d \n", "Group B: count: ", count2, "sum: ", sum2);
@@ -92,9 +113,11 @@ int main()
     int sum3 = 0;
     int count3 = 0;
     int piece3[15];
+    int sortarray3[15];
     for (k = 1; k < 16; ++k) {
         piece3[k] = atoi(array3[k]);
         sum3 += piece3[k];
+        sortarray3[k - 1] = piece3[k];
         count3++;
     }
     printf("%s%d, %s%d \n", "Group C: count: ", count3, "sum: ", sum3);
@@ -116,9 +139,11 @@ int main()
     int sum4 = 0;
     int count4 = 0;
     int piece4[15];
+    int sortarray4[15];
     for (m = 1; m < 16; ++m) {
         piece4[m] = atoi(array4[m]);
         sum4 += piece4[m];
+        sortarray4[m - 1] = piece4[m];
         count4++;
     }
     printf("%s%d, %s%d \n", "Group D: count: ", count4, "sum: ", sum4);
@@ -126,24 +151,30 @@ int main()
     for (int i = 1; i < 16; ++i) {
         printf("%d\n", piece4[i]);
     }
+
     //---------------------------------------------------------------------------
 
-
-
     // calculating median:
-    qsort(str_out[1], 14, sizeof(int), cmpfunc);
-    qsort(str_out[3], 12, sizeof(int), cmpfunc);
-    qsort(str_out[5], 15, sizeof(int), cmpfunc);
-    qsort(str_out[7], 15, sizeof(int), cmpfunc);
 
+    int n = 14;
+    sort(sortarray1, n);
+    n = (n + 1) / 2 - 1;
+    printf("Median = %d ", sortarray1[n]);
 
+    int p = 12;
+    sort(sortarray2, p);
+    p = (p + 1) / 2 - 1;
+    printf("Median = %d ", sortarray2[p]);
 
-    //for (int i = 1; i < 15; ++i) {
-    //   printf("%d ,", qsort(str_out[1]));
-    //}
+    int q = 15;
+    sort(sortarray3, q);
+    q = (q + 1) / 2 - 1;
+    printf("Median = %d ", sortarray3[q]);
 
-
-    //int n = (n + 1) / 2 - 1;
+    int r = 15;
+    sort(sortarray4, r);
+    r = (r + 1) / 2 - 1;
+    printf("Median = %d ", sortarray4[r]);
 
     return 0;
 }
