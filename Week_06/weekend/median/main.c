@@ -21,14 +21,28 @@ int main()
             fscanf(fp, "%s\n", str_out[i]);
             //printf("%s\n", str_out[i]);
         }
-
+/*
     printf("%s\n", str_out[1]);
     printf("%s\n", str_out[3]);
     printf("%s\n", str_out[5]);
     printf("%s\n", str_out[7]);
+*/
+    char *p = strtok(str_out[1], ":,");
 
-    for (char *p = strtok(str_out[1], ":,"); p != NULL; p = strtok(NULL, ",")) {
-        printf("%s ", p);
+    char *array[1000];
+    int i = 0;
+    while (p != NULL) {
+        array[i++] = p;
+        p = strtok(NULL, ":,");
     }
+
+    for (i = 1; i < 20; ++i) {
+        printf("%s\n", array[i]);
+        atoi(array[i]);
+    }
+
+    //printf("%d", atoi(array[1]));
+
+
     return 0;
 }
