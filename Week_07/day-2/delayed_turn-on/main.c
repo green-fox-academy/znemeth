@@ -19,27 +19,19 @@ int main(void)
 
 	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
 
-//  Your program should start in a state waiting for 5 button press (press means:
-//  press and release), and when it reaches 5, then turn on the user LED,
-//	and put your program into a state in which the program is not reacting to
-// 	any further button pushes at all, so the LED should be lit once, and forever.
+//  Flash the user LED with gradually increasing frequency.
+//	Start from 0.5 Hz and constantly make it 1 Hz, then 2 Hz finally 4 Hz,
+//	then it should constantly decrease the frequency from 4 Hz back to 0.5 Hz.
+//	(increase/decrease the frequency, when 3 period - on and off - comes to an end.
 
+	int count = 0;
 	while (1) {
-		if (BSP_PB_GetState(BUTTON_KEY)) {
+		if (BSP_PB_GetState(BUTTON_KEY) && count < 5) {
+			count++;
 			HAL_Delay(300);
-			if (BSP_PB_GetState(BUTTON_KEY)) {
-				HAL_Delay(300);
-				if (BSP_PB_GetState(BUTTON_KEY)) {
-					HAL_Delay(300);
-					if (BSP_PB_GetState(BUTTON_KEY)) {
-						HAL_Delay(300);
-						if (BSP_PB_GetState(BUTTON_KEY)) {
-							while (1) {
-								BSP_LED_On(LED1);
-							}
-						}
-					}
-				}
+		} else if (BSP_PB_GetState(BUTTON_KEY) && count >= 5) {
+			while (1) {
+				BSP_LED_On(LED1);
 			}
 		}
 	}
