@@ -1,6 +1,5 @@
 #include "stm32f7xx.h"
 #include "stm32746g_discovery.h"
-#include <string.h>
 
 GPIO_InitTypeDef user_button_handle;
 
@@ -14,6 +13,8 @@ void init_user_button()
 	user_button_handle.Pull = GPIO_NOPULL;  // felhuzo ellenallas NINCS
 	user_button_handle.Speed = GPIO_SPEED_FAST;
 	user_button_handle.Mode = GPIO_MODE_IT_RISING; //rising edge, IT = interrupt
+
+	//user_button_handle.Alternate = ; PWM-hez kell, de akkor a Mode-ot is modositani kell
 
 	HAL_GPIO_Init(GPIOI, &user_button_handle); // struct peldany neve
 
