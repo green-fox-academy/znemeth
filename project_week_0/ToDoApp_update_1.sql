@@ -1,0 +1,73 @@
+/*DROP DATABASE ToDoApp;*/
+CREATE DATABASE ToDoApp;
+USE ToDoApp;
+
+CREATE TABLE IF NOT EXISTS todo
+(
+todoID SMALLINT AUTO_INCREMENT,
+todoTEXT TEXT,
+PRIMARY KEY (todoID)
+);
+
+CREATE TABLE IF NOT EXISTS doing
+(
+doingID SMALLINT AUTO_INCREMENT,
+doingTEXT TEXT,
+PRIMARY KEY (doingID)
+);
+
+CREATE TABLE IF NOT EXISTS review
+(
+reviewID SMALLINT AUTO_INCREMENT,
+reviewTEXT TEXT,
+PRIMARY KEY (reviewID)
+);
+
+CREATE TABLE IF NOT EXISTS done
+(
+doneID SMALLINT AUTO_INCREMENT,
+doneTEXT TEXT,
+PRIMARY KEY (doneID)
+);
+
+/*ADDING ITEMS TO THE LIST */
+INSERT INTO todo (todoTEXT) VALUES ("rest") , ("sleep");
+INSERT INTO doing (doingTEXT) VALUES ("eat") , ("drink");
+
+/*SHOW ALL TABLES IN THE DATABASE*/
+SHOW tables;
+
+SHOW COLUMNS FROM todo;
+SHOW COLUMNS FROM doing;
+SHOW COLUMNS FROM review;
+SHOW COLUMNS FROM done;
+
+
+SELECT todoID, todoTEXT
+FROM todo;
+
+SELECT doingID, doingTEXT
+FROM doing;
+
+SELECT reviewID, reviewTEXT
+FROM review;
+
+SELECT doneID, doneTEXT
+FROM done;
+
+UPDATE todo
+SET todoTEXT = "coding"
+WHERE todoID = 2;
+
+SELECT todoID, todoTEXT
+FROM todo;
+
+DELETE FROM todo
+WHERE todoID = 1;
+
+SELECT todoID, todoTEXT
+FROM todo;
+
+/* DELETE THE DATABASE */
+DROP DATABASE ToDoApp;
+
