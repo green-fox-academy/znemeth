@@ -95,7 +95,7 @@ int main()
 
 	cv::RNG rand;
 	int random = (unsigned)rand % 100 + 1;
-	std::cout << "random number: " << random << std::endl;
+	std::cout << "Random number: " << random << std::endl;
 
 	cv::waitKey(0);
 	return 0;
