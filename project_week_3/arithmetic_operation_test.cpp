@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "../opencv/arithmetic_operations.cpp"
 
-class TestArithmeticOperation : public testing::Test
+class TestAddImage : public testing::Test
 {
 protected:
 
@@ -15,82 +15,94 @@ protected:
 	}
 };
 
-TEST_F(TestArithmeticOperation, fileReadAdd) {
+class TestSubtractImage : public TestAddImage 
+{
+};
+
+class TestMultiplyImage : public TestSubtractImage 
+{
+};
+
+class TestDivideImage : public TestMultiplyImage 
+{
+};
+
+TEST_F(TestAddImage, fileReadAdd) {
 	cv::Mat resultImage = addImage(originalImage, originalImage2);
 	EXPECT_FALSE(resultImage.empty());
 }
 
-TEST_F(TestArithmeticOperation, fileReadSubtract) {
+TEST_F(TestSubtractImage, fileReadSubtract) {
 	cv::Mat resultImage = subtractImage(originalImage, originalImage2);
 	EXPECT_FALSE(resultImage.empty());
 }
 
-TEST_F(TestArithmeticOperation, fileReadMultiply) {
+TEST_F(TestMultiplyImage, fileReadMultiply) {
 	cv::Mat resultImage = multiplyImage(originalImage, originalImage2);
 	EXPECT_FALSE(resultImage.empty());
 }
 
-TEST_F(TestArithmeticOperation, fileReadDivide) {
+TEST_F(TestDivideImage, fileReadDivide) {
 	cv::Mat resultImage = divideImage(originalImage, originalImage2);
 	EXPECT_FALSE(resultImage.empty());
 }
 
-TEST_F(TestArithmeticOperation, sizeOfOriginalAndOutputFileAdd) {
+TEST_F(TestAddImage, sizeOfOriginalAndOutputFileAdd) {
 	cv::Mat resultImage = addImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.size == originalImage.size);
 }
 
-TEST_F(TestArithmeticOperation, sizeOfOriginalAndOutputFileSubtract) {
+TEST_F(TestSubtractImage, sizeOfOriginalAndOutputFileSubtract) {
 	cv::Mat resultImage = subtractImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.size == originalImage.size);
 }
 
-TEST_F(TestArithmeticOperation, sizeOfOriginalAndOutputFileMultiply) {
+TEST_F(TestMultiplyImage, sizeOfOriginalAndOutputFileMultiply) {
 	cv::Mat resultImage = multiplyImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.size == originalImage.size);
 }
 
-TEST_F(TestArithmeticOperation, sizeOfOriginalAndOutputFileDivide) {
+TEST_F(TestDivideImage, sizeOfOriginalAndOutputFileDivide) {
 	cv::Mat resultImage = divideImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.size == originalImage.size);
 }
 
-TEST_F(TestArithmeticOperation, rowsOfOriginalAndOutputFileAdd) {
+TEST_F(TestAddImage, rowsOfOriginalAndOutputFileAdd) {
 	cv::Mat resultImage = addImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.rows == originalImage.rows);
 }
 
-TEST_F(TestArithmeticOperation, rowsOfOriginalAndOutputFileSubtract) {
+TEST_F(TestSubtractImage, rowsOfOriginalAndOutputFileSubtract) {
 	cv::Mat resultImage = subtractImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.rows == originalImage.rows);
 }
 
-TEST_F(TestArithmeticOperation, rowsOfOriginalAndOutputFileMultiply) {
+TEST_F(TestMultiplyImage, rowsOfOriginalAndOutputFileMultiply) {
 	cv::Mat resultImage = multiplyImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.rows == originalImage.rows);
 }
 
-TEST_F(TestArithmeticOperation, rowsOfOriginalAndOutputFileDivide) {
+TEST_F(TestDivideImage, rowsOfOriginalAndOutputFileDivide) {
 	cv::Mat resultImage = divideImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.rows == originalImage.rows);
 }
 
-TEST_F(TestArithmeticOperation, colsOfOriginalAndOutputFileAdd) {
+TEST_F(TestAddImage, colsOfOriginalAndOutputFileAdd) {
 	cv::Mat resultImage = addImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.cols == originalImage.cols);
 }
 
-TEST_F(TestArithmeticOperation, colsOfOriginalAndOutputFileSubtract) {
+TEST_F(TestSubtractImage, colsOfOriginalAndOutputFileSubtract) {
 	cv::Mat resultImage = subtractImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.cols == originalImage.cols);
 }
 
-TEST_F(TestArithmeticOperation, colsOfOriginalAndOutputFileMultiply) {
+TEST_F(TestMultiplyImage, colsOfOriginalAndOutputFileMultiply) {
 	cv::Mat resultImage = multiplyImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.cols == originalImage.cols);
 }
 
-TEST_F(TestArithmeticOperation, colsOfOriginalAndOutputFileDivide) {
+TEST_F(TestDivideImage, colsOfOriginalAndOutputFileDivide) {
 	cv::Mat resultImage = divideImage(originalImage, originalImage2);
 	EXPECT_TRUE(resultImage.cols == originalImage.cols);
 }
