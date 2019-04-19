@@ -16,29 +16,11 @@ InputFeedback parameterNumberInspection(int inputNumbers, const char* feature)
 		return SEPARATE_COLOR;
 	} else if (featureName == "-edges") {
 		return DETECT_EDGES;
-<<<<<<< HEAD
-	}
-	else if (featureName == "-sharpen" && inputNumbers >= 3 && inputNumbers <= 4) {
-		return SHARPENING;
-	}
-	else if (featureName == "-add" && inputNumbers >= 4 && inputNumbers <= 5) {
-		return ADD_IMAGE;
-	}
-	else if (featureName == "-subtract" && inputNumbers >= 4 && inputNumbers <= 5) {
-		return SUBTRACT_IMAGE;
-	}
-	else if (featureName == "-multiply" && inputNumbers >= 4 && inputNumbers <= 5) {
-		return MULTIPLY_IMAGE;
-	}
-	else if (featureName == "-divide" && inputNumbers >= 4 && inputNumbers <= 5) {
-		return DIVIDE_IMAGE;
-	}
-	else {
-=======
 	} else if (featureName == "-sharpen") {
 		return SHARPENING;
+	} else if (featureName == "-resize" || "-rotate") {
+		return RESIZEROTATE;
 	} else {
->>>>>>> development
 		return WRONG_FEATURE;
 	}
 }

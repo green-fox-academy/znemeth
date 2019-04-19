@@ -1,10 +1,10 @@
-#include "reduce_color.h"
+//#include "reduce_color.h"
 #include "salt_effect.h"
 #include "input_parameter_inspection.h"
 #include "separate_color.h"
 #include "detect_edges.h"
 #include "img_sharpening.h"
-#include "arithmetic_operations.h"
+#include "image_geometry.h"
 
 int main(int argc, const char** argv)
 {
@@ -19,7 +19,7 @@ int main(int argc, const char** argv)
 		std::cin.get();
 		break;
 	case REDUCE_COLOR:
-		reduceColorParser(argc, argv);
+		//reduceColorParser(argc, argv);
 		break;
 	case SALT_EFFECT:
 		saltParser(argc, argv);
@@ -33,17 +33,9 @@ int main(int argc, const char** argv)
 	case SHARPENING:
 		sharpenParser(argc, argv);
 		break;
-	case ADD_IMAGE:
-		addParser(argc, argv);
+	case RESIZEROTATE:
+		resizerotateParser(argc, argv);
 		break;
-	case SUBTRACT_IMAGE:
-		subtractParser(argc, argv);
-		break;
-	case MULTIPLY_IMAGE:
-		multiplyParser(argc, argv);
-		break;
-	case DIVIDE_IMAGE:
-		divideParser(argc, argv);
 		break;
 	case WRONG_FEATURE:
 		std::cout << "There is no this kind of feature" << std::endl;

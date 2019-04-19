@@ -18,15 +18,8 @@ enum InputFeedback
 	SALT_EFFECT,
 	SEPARATE_COLOR,
 	DETECT_EDGES,
-<<<<<<< HEAD
 	SHARPENING,
-	ADD_IMAGE,
-	SUBTRACT_IMAGE,
-	MULTIPLY_IMAGE,
-	DIVIDE_IMAGE
-=======
-	SHARPENING
->>>>>>> development
+	RESIZEROTATE
 };
 
 InputFeedback parameterNumberInspection(int inputNumbers, const char* featureName);
