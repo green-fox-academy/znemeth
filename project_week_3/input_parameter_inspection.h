@@ -19,7 +19,7 @@ enum InputFeedback
 	SEPARATE_COLOR,
 	DETECT_EDGES,
 	SHARPENING,
-	RESIZEROTATE
+	GEOMETRY
 };
 
 InputFeedback parameterNumberInspection(int inputNumbers, const char* featureName);

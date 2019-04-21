@@ -9,7 +9,7 @@
 #ifndef H_IMAGE_GEOMETRY
 #define H_IMAGE_GEOMETRY
 
-void resizerotateParser(int argc, const char** argv);
-cv::Mat resizerotateImage(cv::Mat image, double scale = 1.0);
+void geometryParser(int argc, const char** argv);
+cv::Mat resizerotateImage(cv::Mat image, double scale, int angle);
 
 #endif H_IMAGE_GEOMETRY

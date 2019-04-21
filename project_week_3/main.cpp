@@ -33,9 +33,8 @@ int main(int argc, const char** argv)
 	case SHARPENING:
 		sharpenParser(argc, argv);
 		break;
-	case RESIZEROTATE:
-		resizerotateParser(argc, argv);
-		break;
+	case GEOMETRY:
+		geometryParser(argc, argv);
 		break;
 	case WRONG_FEATURE:
 		std::cout << "There is no this kind of feature" << std::endl;
