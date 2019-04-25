@@ -34,7 +34,7 @@ protected:
 	}
 };
 
-TEST(TestSwap, isSwap) {
+TEST_F(TestSelectionSort, isSwap) {
 	int x = 10;
 	int y = 1000;
 	swap(&x, &y);

@@ -26,12 +26,5 @@ std::vector<int> selectionSort(std::vector<int> list, bool isAscending)
 		}
 	}
 
-	for  (int i = 0; i < list.size(); i++)
-	{
-		std::cout << list[i] << std::endl;
-	}
-
-	std::cin.get();
-
 	return list;
 }

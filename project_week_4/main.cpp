@@ -12,11 +12,10 @@
 #include "decolor.h"
 #include "waving_effect.h"
 #include "detect_corners.h"
-#include "selection_sort.h"
 
 int main(int argc, const char** argv)
 {
-/*	switch (parameterNumberInspection(argc, argv[1]))
+	switch (parameterNumberInspection(argc, argv[1]))
 	{
 	case FEW_PARAMETER:
 		std::cout << "More input parameter is necessary" << std::endl;
@@ -90,8 +89,6 @@ int main(int argc, const char** argv)
 	default:
 		break;
 	}
-*/
-	std::vector<int> list = {5, 8, 45, 51, 100}; // , 1000, 10000, 63456, 456400, 9999999};
-	selectionSort(list, 0);
+
 	return 0;
 }
