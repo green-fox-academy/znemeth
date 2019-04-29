@@ -6,23 +6,6 @@ void geometryParser(int argc, const char** argv) {
 	cv::Mat originalImage;
 	cv::Mat resultImage;
 
-/*	Due to the complexity of the parser, the command line argument sytaxis:
-	-geometry ../../img/speed_sign.jpg -resize 1.8 -rotate 35 -s
-	-geometry ../../img/speed_sign.jpg -resize 1.8 -rotate 35
-	-geometry ../../img/speed_sign.jpg -resize 1.8 -s
-	-geometry ../../img/speed_sign.jpg -rotate 35 -s
-	-geometry ../../img/speed_sign.jpg -resize 1.8
-	-geometry ../../img/speed_sign.jpg -rotate 35
-
-	argv[0] - *.exe
-	argv[1] - -geometry
-	argv[2] - ../../img/speed_sign.jpg
-	argv[3] - std::string additionalArgumentFirst;			// feature
-	argv[4] - double additionalArgumentSecond;				// double || int evaluated as double
-	argv[5] - std::string additionalArgumentThird;			// -s || feature
-	argv[6] - int additionalArguemntFourth;					// int
-	argv[7] - std::string additionalArgumentFifth;			// -s
-*/
 	switch (argc)
 	{
 	case 8:
@@ -112,12 +95,6 @@ void geometryParser(int argc, const char** argv) {
 		}
 
 	default:
-		std::string additionalArgumentFirst = argv[3];
-		double additionalArgumentSecond = std::stod(argv[4]);
-		std::string additionalArgumentThird = argv[5];
-		int additionalArguemntFourth = std::stoi(argv[6]);
-		std::string additionalArgumentFifth = argv[7];
-
 		std::cout << "Unexpected error!" << std::endl;
 		std::cin.get();
 		break;

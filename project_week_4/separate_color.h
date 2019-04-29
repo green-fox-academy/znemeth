@@ -6,9 +6,9 @@
 #include <string>
 #include <vector> 
 
-#ifndef H_IMAGE_GEOMETRY
-#define H_IMAGE_GEOMETRY
+#ifndef H_SEPARATE_COLOR
+#define H_SEPARATE_COLOR
 
-void geometryParser(int argc, const char** argv);
+void separateParser(int argc, const char** argv);
 
-#endif H_IMAGE_GEOMETRY
+#endif H_SEPARATE_COLOR

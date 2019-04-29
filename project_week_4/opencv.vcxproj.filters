@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="img_sharpening.cpp" />
+    <ClCompile Include="input_parameter_inspection.cpp" />
+    <ClCompile Include="salt_effect.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="reduce_color.cpp" />
+    <ClCompile Include="detect_edges.cpp" />
+    <ClCompile Include="separate_color.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="reduce_color.h" />
+    <ClInclude Include="img_sharpening.h" />
+    <ClInclude Include="input_parameter_inspection.h" />
+    <ClInclude Include="image_morphology.h" />
+    <ClInclude Include="salt_effect.h" />
+    <ClInclude Include="detect_edges.h" />
+    <ClInclude Include="separate_color.h" />
+  </ItemGroup>
+</Project>

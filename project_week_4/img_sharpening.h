@@ -5,10 +5,9 @@
 #include <opencv2/imgproc.hpp>
 #include <string>
 #include <vector> 
+#ifndef H_SHARPENING
+#define H_SHARPENING
 
-#ifndef H_IMAGE_GEOMETRY
-#define H_IMAGE_GEOMETRY
+void sharpenParser(int argc, const char** argv);
 
-void geometryParser(int argc, const char** argv);
-
-#endif H_IMAGE_GEOMETRY
+#endif H_SHARPENING

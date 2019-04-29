@@ -1,10 +1,5 @@
 #include "selection_sort.h"
-
-void swap(int *x, int *y) {
-	int temp = *x;
-	*x = *y;
-	*y = temp;
-}
+#include "swap.h"
 
 std::vector<int> selectionSort(std::vector<int> list, bool isAscending)
 {
@@ -17,12 +12,12 @@ std::vector<int> selectionSort(std::vector<int> list, bool isAscending)
 				i_min = j;
 			}
 		}
-		swap(&list[i_min], &list[i]);
+		swap(list[i_min], list[i]);
 	}
 
 	if (isAscending == false) {
 		for (int i = 0; i < list.size() / 2; i++) {
-			swap(&list[i], &list[list.size() - 1 - i]);
+			swap(list[i], list[list.size() - 1 - i]);
 		}
 	}
 

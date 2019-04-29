@@ -19,7 +19,20 @@ enum InputFeedback
 	SEPARATE_COLOR,
 	DETECT_EDGES,
 	SHARPENING,
-	GEOMETRY
+	GEOMETRY,
+	ADD_IMAGE,
+	SUBTRACT_IMAGE,
+	MULTIPLY_IMAGE,
+	DIVIDE_IMAGE,
+	PANORAMA,
+	CARTOON,
+	ERODE,
+	DILATE,
+	OPENING,
+	CLOSING,
+	DECOLOR,
+	WAVING_EFFECT,
+	DETECT_CORNERS
 };
 
 InputFeedback parameterNumberInspection(int inputNumbers, const char* featureName);

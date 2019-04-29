@@ -3,12 +3,13 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/features2d.hpp>
 #include <opencv2/imgproc.hpp>
+#include "opencv2/stitching.hpp" 
 #include <string>
 #include <vector> 
 
-#ifndef H_IMAGE_GEOMETRY
-#define H_IMAGE_GEOMETRY
+#ifndef H_PANORAMA
+#define H_PANORAMA
 
-void geometryParser(int argc, const char** argv);
+void panoramaParser(int argc, const char** argv);
 
-#endif H_IMAGE_GEOMETRY
+#endif H_PANORAMA

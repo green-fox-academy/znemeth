@@ -12,6 +12,7 @@
 #include "decolor.h"
 #include "waving_effect.h"
 #include "detect_corners.h"
+#include "counting_sort.h"
 
 int main(int argc, const char** argv)
 {
