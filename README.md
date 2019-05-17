@@ -7,7 +7,7 @@
 - Week_06 - Week_09:
     - __C basics__ 
 - project_week_0 - project_week_8:
-    - [__OpenCV project__](https://github.com/green-fox-academy/megalotis-sapphire)
+    - [__OpenCV project__](https://github.com/green-fox-academy/megalotis-sapphire)<br/><br/><br/>
 
 [Link to znemeth-patchwork](https://github.com/znemeth/patchwork)
 
