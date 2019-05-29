@@ -17,8 +17,8 @@ void databaseDigitReading(std::string imagePath, int digitValue)
 	}
 	
 	sql = "CREATE TABLE DIGIT_READING("  \
-		"IMAGE_PATH	TEXT	PRIMARY KEY	NOT NULL,"	\
-		"DIGIT_NUMBER	INT	NOT NULL);";
+		"IMAGE_PATH	TEXT PRIMARY KEY NOT NULL,"	\
+		"DIGIT_NUMBER INT NOT NULL);";
 
 	sqlite3_exec(database, sql, 0, 0, &errorMessage);
 
